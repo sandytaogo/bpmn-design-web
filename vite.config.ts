@@ -6,7 +6,7 @@ import * as path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? './bpm' : '/bpm',
+  base: process.env.NODE_ENV === 'production' ? './' : '/bpm',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src/'),

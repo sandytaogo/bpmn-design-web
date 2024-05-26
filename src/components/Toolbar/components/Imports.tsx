@@ -44,16 +44,8 @@ const Imports = defineComponent({
     
     return () => (
       <span>
-        <NButton type="info" secondary onClick={openImportWindow}>
-          {t('toolbar.openFile')}
-        </NButton>
-        <input
-          type="file"
-          ref={importRef}
-          style="display: none"
-          accept=".xml,.bpmn"
-          onChange={changeImportFile}
-        ></input>
+        <NButton type="info" secondary onClick={openImportWindow}>{t('toolbar.openFile')}</NButton>
+        <input type="file" ref={importRef} style="display: none" accept=".xml,.bpmn" onChange={changeImportFile}></input>
       </span>
     )
   }
