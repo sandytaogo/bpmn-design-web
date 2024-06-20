@@ -1,11 +1,17 @@
-
+/**
+ * Copyright
+ */
 import axios from 'axios'
 
 const RemoteService = axios.create({
     baseURL: '',
     // 超时时间
     timeout: 5000,
-    headers: { "X-Custom-Header": "foobar" , 'Content-Type':'application/x-www-form-urlencoded'}
+    headers: { 
+        'X-Custom-Header': 'foobar',
+        'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8',
+        'X-Requested-With':'XMLHttpRequest'
+    }
 })
 //3.添加请求拦截器
 RemoteService.interceptors.request.use((config) => {
