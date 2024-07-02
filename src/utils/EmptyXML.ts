@@ -6,11 +6,10 @@ export default (key: string, name: string, type?: string): string => {
   xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
   xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
   xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
-  targetNamespace="http://bpmn.io/schema/bpmn"
-  id="Definitions_${key}">
+  targetNamespace="http://bpmn.io/schema/bpmn">
   <bpmn:process id="${key}" name="${name}" isExecutable="true"></bpmn:process>
-  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
-    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="${key}"></bpmndi:BPMNPlane>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_${key}">
+    <bpmndi:BPMNPlane id="BPMNPlane_${key}" bpmnElement="${key}"></bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>`
 }

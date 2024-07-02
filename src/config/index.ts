@@ -3,9 +3,9 @@ import { defaultLang } from '@/i18n'
 
 export const defaultSettings: EditorSettings = {
   language: defaultLang,
-  processId: `Process_${new Date().getTime()}`,
+  processId: `process_${Date.now()}`,
   processName: `业务流程`,
-  processEngine: 'camunda',
+  processEngine: 'flowable',
   paletteMode: 'enhancement',
   penalMode: 'custom',
   contextPadMode: 'enhancement',

@@ -15,13 +15,18 @@ const SaveBtn = defineComponent({
       const modeler = modelerStore.getModeler!
       const { xml } = await modeler.saveXML({format: true, preamble: true })
       let bpmnId = getParam('bpmnId')
-      RemoteService.post('../user/bpm/save', {bpmnId:bpmnId, data: xml}).then((res) => {
-        if (res.code == 200) {
-          window._messageBox.success(res.msg);
-        } else {
-          window._messageBox.error(res.msg);
-        }
-      })
+      let processId = getParam('processId')
+      try {
+        RemoteService.post('../user/workflow/bpm/save', {bpmnId:bpmnId, id: processId, data: xml}).then((res) => {
+          if (res.code == 200) {
+            window._messageBox.success(res.msg);
+          } else {
+            window._messageBox.error(res.msg);
+          }
+        })
+      } catch (e) {
+        window._messageBox.error('尚未登录或系统繁忙');
+      }
     }
     return () => (
       <span>

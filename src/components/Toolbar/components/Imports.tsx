@@ -32,8 +32,9 @@ const Imports = defineComponent({
     }
 
     let bpmnId = getParam('bpmnId')
+    let processId = getParam('processId')
     if (bpmnId) {
-      RemoteService.get('../user/bpm/get', {params:{bpmnId:bpmnId}}).then((res) => {
+      RemoteService.get('../user/bpm/get', {params:{id:processId, bpmnId:bpmnId}}).then((res) => {
         if (res.code == 200) {
           modelerStore.getModeler!.importXML(res.data as string)
         } else {
