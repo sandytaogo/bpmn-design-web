@@ -50,5 +50,12 @@ export default {
   operations: '操作',
   edit: '编辑',
   remove: '移除',
-  confirm: '确认'
+  confirm: '确认',
+
+  assignee: '分配人',
+  candidateUsers:'候选人',
+  candidateGroups:'候选组',
+  dueDate:'到期日',
+  followUpDate:'跟随日期',
+  priority:'优先级'
 }
